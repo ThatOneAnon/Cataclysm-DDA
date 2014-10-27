@@ -2891,8 +2891,9 @@ void mattack::bite(monster *z, int index)
         return;
     }
 
+    body_part hit = random_body_part();
     // Can we dodge the attack? Uses player dodge function % chance (melee.cpp)
-    int dodge_check = std::max(g->u.get_dodge() - rng(0, z->type->melee_skill), 0L);
+    int dodge_check = std::max(g->u.get_dodge() - g->u.encumb(hit) - rng(0, z->type->melee_skill), 0L);
     if (rng(0, 10000) < 10000 / (1 + (99 * exp(-.6 * dodge_check)))) {
         add_msg(_("You dodge it!"));
         g->u.practice( "dodge", z->type->melee_skill * 2 );
@@ -2900,7 +2901,6 @@ void mattack::bite(monster *z, int index)
         return;
     }
 
-    body_part hit = random_body_part();
     int dam = rng(5, 10);
     dam = g->u.deal_damage( z, hit, damage_instance( DT_BASH, dam ) ).total_damage();
 

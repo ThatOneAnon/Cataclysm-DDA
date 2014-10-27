@@ -1955,9 +1955,10 @@ int item::bash_resist() const
     std::vector<material_type*> mat_types = made_of_types();
     // Armor gets an additional multiplier.
     if (is_armor()) {
+        int damage_mod = damage >= 0 ? damage : 0;
         // base resistance
         it_armor* tmp = dynamic_cast<it_armor*>(type);
-        eff_thickness = ((tmp->thickness - damage <= 0) ? 1 : (tmp->thickness - damage));
+        eff_thickness = ((tmp->thickness - damage <= 0) ? 1 : (tmp->thickness - damage_mod));
     }
     
     for (auto mat : mat_types) {
@@ -1985,9 +1986,10 @@ int item::cut_resist() const
     std::vector<material_type*> mat_types = made_of_types();
     // Armor gets an additional multiplier.
     if (is_armor()) {
+        int damage_mod = damage >= 0 ? damage : 0;
         // base resistance
         it_armor* tmp = dynamic_cast<it_armor*>(type);
-        eff_thickness = ((tmp->thickness - damage <= 0) ? 1 : (tmp->thickness - damage));
+        eff_thickness = ((tmp->thickness - damage <= 0) ? 1 : (tmp->thickness - damage_mod));
     }
     
     for (auto mat : mat_types) {

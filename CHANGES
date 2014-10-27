@@ -1,0 +1,4 @@
+* When monster bites you, now it chooses body part first. 
+When you are trying to dodge, your dodge skill is decreased by encumbrance level of that body part.
+
+* Reinforcing armor does not provide bash and cut protection bonus anymore
