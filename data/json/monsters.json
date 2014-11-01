@@ -106,7 +106,7 @@
     "hp":100,
     "death_function":"NORMAL",
     "description":"The American black bear.  A large omnivorous scavenger, it has powerful claws and jaws, and is an effective ambush hunter.  It can pose a considerable threat, although most individuals are shy around humans.",
-    "flags":["SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "FUR", "BLEED", "BASHES", "ATTACKMON", "BONES", "VIS40", "FAT"],
+    "flags":["SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "FUR", "BLEED", "BASHES", "ATTACKMON", "BONES", "VIS40", "FAT", "BLOOD_THIRSTY"],
     "anger_triggers":["HURT", "PLAYER_CLOSE"],
     "placate_triggers":["MEAT"],
     "fear_triggers":["SOUND"],
@@ -135,7 +135,7 @@
     "hp":16,
     "death_function":"NORMAL",
     "description":"A spotted wild cat living across much of North America.  It is not a serious threat to humans, but it can be aggressive if not left alone.",
-    "flags":["SEES", "HEARS", "GOODHEARING", "SMELLS", "ANIMAL", "WARM", "FUR", "HIT_AND_RUN", "VIS40", "BONES", "FAT"],
+    "flags":["SEES", "HEARS", "GOODHEARING", "SMELLS", "ANIMAL", "WARM", "FUR", "HIT_AND_RUN", "VIS40", "BONES", "FAT", "BLOOD_THIRSTY"],
     "placate_triggers":["MEAT"],
     "fear_triggers":["SOUND", "PLAYER_CLOSE"],
     "categories":["WILDLIFE"]
@@ -245,7 +245,7 @@
     "death_function":"NORMAL",
     "special_attacks":[["LEAP", 5]],
     "description":"The Eastern cougar, a large feline predator.  Once thought extinct in this region, conservation efforts were successful in restoring a thriving population.",
-    "flags":["SEES", "HEARS", "GOODHEARING", "SMELLS", "ANIMAL", "WARM", "FUR", "HIT_AND_RUN", "KEENNOSE", "BLEED", "ATTACKMON", "VIS50", "BONES", "FAT"],
+    "flags":["SEES", "HEARS", "GOODHEARING", "SMELLS", "ANIMAL", "WARM", "FUR", "HIT_AND_RUN", "KEENNOSE", "BLEED", "ATTACKMON", "VIS50", "BONES", "FAT", "BLOOD_THIRSTY"],
     "anger_triggers":["STALK", "PLAYER_WEAK", "HURT", "PLAYER_CLOSE", "FRIEND_ATTACKED"],
     "placate_triggers":["MEAT"],
     "fear_triggers":["SOUND"],
@@ -310,7 +310,7 @@
     "hp":22,
     "death_function":"NORMAL",
     "description":"The Eastern coyote, also called the tweed wolf, is a territorial canine descended from the offspring of grey wolves and true coyotes.  It is intimidated by humans and other predators, but will fight if threatened.",
-    "flags":["SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "FUR", "HIT_AND_RUN", "KEENNOSE", "BLEED", "ATTACKMON", "BONES", "VIS50"],
+    "flags":["SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "FUR", "HIT_AND_RUN", "KEENNOSE", "BLEED", "ATTACKMON", "BONES", "VIS50", "BLOOD_THIRSTY"],
     "anger_triggers":["STALK", "FRIEND_ATTACKED", "PLAYER_WEAK", "HURT", "PLAYER_CLOSE"],
     "placate_triggers":["MEAT"],
     "categories":["WILDLIFE"]
@@ -338,7 +338,7 @@
     "hp":20,
     "death_function":"NORMAL",
     "description":"The Northeastern coyote, a widespread canine pack hunter.  More timid than a wolf, it is an opportunistic feeder and prefers to hunt smaller and weaker prey.",
-    "flags":["SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "FUR", "KEENNOSE", "BLEED", "ATTACKMON", "BONES", "VIS50", "FAT"],
+    "flags":["SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "FUR", "KEENNOSE", "BLEED", "ATTACKMON", "BONES", "VIS50", "FAT", "BLOOD_THIRSTY"],
     "anger_triggers":["FRIEND_ATTACKED", "PLAYER_WEAK", "PLAYER_CLOSE"],
     "placate_triggers":["MEAT"],
     "categories":["WILDLIFE"]
@@ -447,7 +447,7 @@
     "hp":30,
     "death_function":"NORMAL",
     "description": "With mangy fur and hungry eyes, it's clear that this once domesticated dog has gone feral.",
-    "flags":["SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "FUR", "HIT_AND_RUN", "KEENNOSE", "BLEED", "ATTACKMON", "VIS40", "BONES", "FAT"],
+    "flags":["SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "FUR", "HIT_AND_RUN", "KEENNOSE", "BLEED", "ATTACKMON", "VIS40", "BONES", "FAT", "BLOOD_THIRSTY"],
     "anger_triggers":["HURT", "FRIEND_ATTACKED", "FRIEND_DIED"],
     "placate_triggers":["MEAT"],
     "categories":["WILDLIFE"]
@@ -898,7 +898,7 @@
     "hp":180,
     "death_function":"NORMAL",
     "description":"This black bear's eyes ooze with black fluid, and its flesh is torn and scarred.  It shuffles as it walks.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "NO_BREATHE", "VIS40", "REVIVES", "FUR"],
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "NO_BREATHE", "VIS40", "REVIVES", "FUR", "BLOOD_THIRSTY"],
     "anger_triggers":["PLAYER_CLOSE", "HURT"],
     "fear_triggers":["FIRE"]
     },{
@@ -1033,7 +1033,7 @@
     "hp":40,
     "death_function":"NORMAL",
     "description":"A cunning pack predator, once extinct in the New England area, the wolf was successfully reintroduced and their numbers reached record highs in the decade before the cataclysm.  Lucky you.",
-    "flags":["SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "FUR", "KEENNOSE", "BLEED", "ATTACKMON", "BONES", "VIS50", "FAT"],
+    "flags":["SEES", "HEARS", "SMELLS", "ANIMAL", "WARM", "FUR", "KEENNOSE", "BLEED", "ATTACKMON", "BONES", "VIS50", "FAT", "BLOOD_THIRSTY"],
     "anger_triggers":["STALK", "FRIEND_ATTACKED", "FRIEND_DIED", "PLAYER_WEAK", "PLAYER_CLOSE"],
     "placate_triggers":["MEAT"],
     "categories":["WILDLIFE"]
@@ -1781,7 +1781,7 @@
     "death_function":"NORMAL",
     "special_attacks":[["BITE", 5]],
     "description":"The deformed, animated corpse of a canine, a sinewy beast which can easily outpace its two-legged friends.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "NO_BREATHE", "VIS50", "REVIVES", "FUR"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "NO_BREATHE", "VIS50", "REVIVES", "FUR", "BLOOD_THIRSTY"]
     },{
         "type" : "MONSTER",
         "id" : "mon_dog_skeleton",
@@ -1840,7 +1840,7 @@
     "death_function":"NORMAL",
     "special_attacks":[["BITE", 5]],
     "description":"A zombified version of one of the German shepherd dogs used in law enforcement.  Its deformed body is encased in a protective kevlar harness.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "NO_BREATHE", "VIS50", "REVIVES", "FUR"],
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "NO_BREATHE", "VIS50", "REVIVES", "FUR", "BLOOD_THIRSTY"],
     "categories":["CLASSIC"]
     },{
         "type" : "MONSTER",
@@ -1867,7 +1867,7 @@
     "death_function":"NORMAL",
     "special_attacks":[["BITE", 2]],
     "description":"Acrid smell accompanies this corpse of canine.  Its whole body is covered in chains of pulsing cysts and slime dribbling ulcers.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "NO_BREATHE", "VIS50", "REVIVES"]
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "BASHES", "POISON", "NO_BREATHE", "VIS50", "REVIVES", "BLOOD_THIRSTY"]
     },{
         "type" : "MONSTER",
         "id" : "mon_zombie_brute",
@@ -2268,7 +2268,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["LEAP", 5], ["BITE", 5]],
     "description":"This once-human body is barely recognizable, scrambling about on all fours, its nails and teeth both sharpened into dangerous looking spikes.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "VIS40", "REVIVES"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BASHES", "POISON", "NO_BREATHE", "VIS40", "REVIVES", "BLOOD_THIRSTY"]
     },{
         "type" : "MONSTER",
         "id" : "mon_zombie_child",
@@ -3332,7 +3332,7 @@
     "hp":20,
     "death_function":"NORMAL",
     "description":"An enormous mutant mosquito, fluttering erratically, its face dominated by a long, spear-tipped proboscis.",
-    "flags":["SMELLS", "HEARS", "STUMBLES", "VENOM", "FLIES", "HIT_AND_RUN", "CHITIN"]
+    "flags":["SMELLS", "HEARS", "STUMBLES", "VENOM", "FLIES", "HIT_AND_RUN", "CHITIN", "BLOOD_THIRSTY"]
     },{
         "type" : "MONSTER",
         "id" : "mon_dragonfly",
@@ -3955,7 +3955,7 @@
     "death_function":"THING",
     "special_attacks":[["DOGTHING", 40]],
     "description":"A domesticated mongrel of the canine persuasion.  In the absence of human society, it has turned feral.  You feel a sudden urge to destroy it.",
-    "flags":["SEES", "SMELLS", "HEARS", "ANIMAL", "WARM", "FUR", "FRIENDLY_SPECIAL"]
+    "flags":["SEES", "SMELLS", "HEARS", "ANIMAL", "WARM", "FUR", "FRIENDLY_SPECIAL", "BLOOD_THIRSTY"]
     },{
         "type" : "MONSTER",
         "id" : "mon_headless_dog_thing",
@@ -4610,7 +4610,7 @@
     "death_function":["NORMAL"],
     "special_attacks":[["FEAR_PARALYZE", 0], ["BITE", 5]],
     "description":"A tall and slender man lacking skin and any normalcy of countenance.  Wings of muscle curl forth from its back and a third eye dominates the forehead.",
-    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BLEED", "HARDTOSHOOT", "ATTACKMON", "HUMAN", "POISON", "REVIVES"]
+    "flags":["SEES", "HEARS", "SMELLS", "WARM", "BLEED", "HARDTOSHOOT", "ATTACKMON", "HUMAN", "POISON", "REVIVES", "BLOOD_THIRSTY"]
     },{
         "type" : "MONSTER",
         "id" : "mon_eyebot",
@@ -4676,7 +4676,7 @@
     "hp":10,
     "death_function":"BROKEN",
     "description":"Automated anti-personnel drone, a fist-sized robot surrounded by whirring blades.",
-    "flags":["SEES", "FLIES", "NOHEAD", "ELECTRONIC", "HIT_AND_RUN", "NO_BREATHE", "VIS40"]
+    "flags":["SEES", "FLIES", "NOHEAD", "ELECTRONIC", "HIT_AND_RUN", "NO_BREATHE", "VIS40", "BLOOD_THIRSTY"]
     },{
         "type" : "MONSTER",
         "id" : "mon_skitterbot",
@@ -5489,7 +5489,7 @@
     "death_function":"NORMAL",
     "special_attacks":[["LEAP", 10]],
     "description":"An otherwise normal-looking cougar, except that its hind legs are swollen, and its eyes bulge with black goo.",
-    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "KEENNOSE", "GOODHEARING", "BASHES", "POISON", "NO_BREATHE", "VIS50", "REVIVES", "FUR"],
+    "flags":["SEES", "HEARS", "SMELLS", "STUMBLES", "WARM", "KEENNOSE", "GOODHEARING", "BASHES", "POISON", "NO_BREATHE", "VIS50", "REVIVES", "FUR", "BLOOD_THIRSTY"],
     "anger_triggers":["PLAYER_CLOSE", "HURT"],
     "fear_triggers":["FIRE"]
     },{

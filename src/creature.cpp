@@ -1169,16 +1169,48 @@ body_part Creature::select_body_part(Creature *source, int hit_roll)
         adjusted_weights.insert(*iter);
     }
 
-    double roll = rng_float(1, totalWeight);
     body_part selected_part = bp_torso;
 
-    std::set<std::pair<body_part, double>, weight_compare>::iterator adj_iter;
-    for(adj_iter = adjusted_weights.begin(); adj_iter != adjusted_weights.end(); ++adj_iter) {
-        roll -= adj_iter->second;
-        if(roll <= 0) {
-            selected_part = adj_iter->first;
-            break;
+    // Blood thirsty monsters can discard body part and go to more damaged
+    int part_rolls = 1;
+    int repick_chance = 50;
+    if (source->has_flag(MF_BLOODTHIRSTY)) {
+        part_rolls += 2;
+        if (is_player() && g->u.has_trait("ANIMALEMPATH")) {
+            part_rolls -= 1;
+            repick_chance -= 10;
         }
+        if (is_player() && g->u.has_trait("ANIMALDISCORD")) {
+            part_rolls += 1;
+            repick_chance += 10;
+        }
+    }
+    body_part last_part = selected_part;
+    for(int r = 0; r < part_rolls; ++r) {
+        double roll = rng_float(1, totalWeight);
+        std::set<std::pair<body_part, double>, weight_compare>::iterator adj_iter;
+        for(adj_iter = adjusted_weights.begin(); adj_iter != adjusted_weights.end(); ++adj_iter) {
+            roll -= adj_iter->second;
+            if(roll <= 0) {
+                selected_part = adj_iter->first;
+                break;
+            }
+        }
+
+        if (r != 0) {
+            hp_part hpart_cur = bodypart_to_hp_part(selected_part);
+            hp_part hpart_lst = bodypart_to_hp_part(last_part);
+            double ratio_cur = get_hp(hpart_cur) / float(get_hp_max(hpart_cur));
+            double ratio_lst = get_hp(hpart_lst) / float(get_hp_max(hpart_lst));
+            body_part cur_pick_part = selected_part;
+            if(ratio_cur > ratio_lst && repick_chance >= rng(1,100))
+                selected_part = last_part;
+            add_msg( m_debug, "picked %s from %s(%.2f)/%s(%.2f)",
+                        body_part_name(selected_part).c_str(), 
+                        body_part_name(cur_pick_part).c_str(), ratio_cur,
+                        body_part_name(last_part).c_str(), ratio_lst);
+        }
+        last_part = selected_part;
     }
 
     return selected_part;

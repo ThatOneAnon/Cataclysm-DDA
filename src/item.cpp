@@ -1770,7 +1770,7 @@ void item::calc_rot(const point &location)
             // rot (outside of fridge) from bday/last_rot_check until fridge/now
             int old = rot;
             rot += get_rot_since( since, until, location );
-            add_msg( m_debug, "r: %s %d,%d %d->%d", type->id.c_str(), since, until, old, rot );
+            //add_msg( m_debug, "r: %s %d,%d %d->%d", type->id.c_str(), since, until, old, rot );
         }
         last_rot_check = now;
 

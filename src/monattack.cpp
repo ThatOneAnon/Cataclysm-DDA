@@ -2891,7 +2891,40 @@ void mattack::bite(monster *z, int index)
         return;
     }
 
-    body_part hit = random_body_part();
+    body_part hit  = random_body_part();
+
+    // blood thirsty monsters have chance to pick more damaged part
+    if (z->has_flag(MF_BLOODTHIRSTY)) {
+        int chance = 60;
+        
+        if (g->u.has_trait("ANIMALDISCORD")) {
+            chance += 20;
+        } else if (g->u.has_trait("ANIMALEMPATH")) {
+            chance -= 20;
+        }
+
+        if (rng(1,100) <= chance)
+        {
+            body_part hit2 = random_body_part();
+            
+            hp_part hp_part1 = bodypart_to_hp_part(hit);
+            hp_part hp_part2 = bodypart_to_hp_part(hit2);
+
+            float r1 = float(g->u.get_hp(hp_part1)) / g->u.get_hp_max(hp_part1);
+            float r2 = float(g->u.get_hp(hp_part2)) / g->u.get_hp_max(hp_part2);
+            
+            add_msg( m_debug, "%s : %s(%.3f) vs %s(%.3f)",
+                     z->name().c_str(), 
+                        body_part_name(hit).c_str(), r1,
+                        body_part_name(hit2).c_str(), r2);
+
+            if (r2 < r1)
+                hit = hit2;
+            
+
+        }
+    }
+
     // Can we dodge the attack? Uses player dodge function % chance (melee.cpp)
     int dodge_check = std::max(g->u.get_dodge() - g->u.encumb(hit) - rng(0, z->type->melee_skill), 0L);
     if (rng(0, 10000) < 10000 / (1 + (99 * exp(-.6 * dodge_check)))) {

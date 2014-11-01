@@ -89,6 +89,7 @@ class monster : public Creature, public JsonSerializer, public JsonDeserializer
         const std::string &symbol() const;
         bool is_symbol_inverted() const;
         bool is_symbol_highlighted() const;
+        
 
         nc_color color_with_effects() const; // Color with fire, beartrapped, etc.
         // Inverts color if inv==true

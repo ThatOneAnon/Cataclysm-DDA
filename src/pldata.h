@@ -248,7 +248,7 @@ inline hp_part bodypart_to_hp_part(body_part p_bp)
     case bp_head:
     case bp_eyes:
     case bp_mouth:
-        return hp_torso;
+        return hp_head;
 
     case bp_arm_l:
     case bp_hand_l:

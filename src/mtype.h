@@ -124,6 +124,7 @@ enum m_flag {
     MF_CBM_TECH,            // May produce a bionic from bionics_tech when butchered.
     MF_CBM_SUBS,            // May produce a bionic from bionics_subs when butchered.
     MF_FISHABLE,            // Its fishable.
+    MF_BLOODTHIRSTY,        // It's looking for blood.
     MF_MAX                  // Sets the length of the flags - obviously must be LAST
 };
 
